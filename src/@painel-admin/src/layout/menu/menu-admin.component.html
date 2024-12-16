@@ -1,17 +1,32 @@
 <section class="menu-admin">
-    <div class="menu-admin__menuBar">
 
-        <!-- <p>Formulário de Cadastro</p> -->
-        
-        <div class="menu-admin__openMenu">
-            <input type="checkbox" name="openMenu" id="openMenu" (change)="openMenu($event)">
-            <label for="openMenu">
+    <div [ngClass]="{'menu-admin__sideMenu': showMenu, 'menu-admin__closeSideMenu':!showMenu}">
+        <div class="menu-admin__showMenu">
+            <input type="checkbox" name="showMenu" id="showMenu" (change)="openSideMenu($event)">
+            <label *ngIf="!showMenu" for="showMenu">
                 >
+            </label>
+
+            <label *ngIf="showMenu" for="showMenu"> 
+                <
             </label>
         </div>
 
-
+        <div [ngClass]="{'menu-admin__container': showMenu, 'menu-admin__hideMenu':!showMenu}" 
+            *ngIf="showController"
+        > 
+                <h1>Painel Adminstrativo</h1>
         
-    </div>
+                <div class="menu-admin__actions">
+                    <a href="">Controle</a>
+                    <a href="">Escolher Controle</a>
+                    <a href="">Banner</a>
+                    <a href="">Home Deslogada</a>
+                    <a href="/controle-de-cadastro">Controle de cadastro</a>
+                    <a href="">Usuários</a>
+                </div>
+        </div>
 
+    </div>
+        
 </section>

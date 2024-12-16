@@ -1,17 +1,25 @@
 .menu-admin {
     position: relative;
 
-    &__menuBar {
+    &__sideMenu {
         background-color: rgb(231, 230, 230);
         height: 100vh;
-        position: relative;
-        width: 100px;
-
+        position: absolute;
+        width: 300px;
+        transition: 0.5s;
     }
 
-    &__openMenu {
-        width: 50px;
-        height: 50px;
+    &__closeSideMenu {
+        background-color: rgb(231, 230, 230);
+        height: 100vh;
+        position: absolute;
+        width: 14px;
+        transition: 0.5s;
+    }
+
+    &__showMenu {
+        width: 40px;
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -29,8 +37,42 @@
         > label {
             font-size: 2rem;
             color: white;
-            // cursor: pointer;
-        }
-        
+            padding: 7px 15px;
+        }   
     }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 50px;
+
+        > h1 {
+            margin: 20px 15px;
+        }
+    }
+
+
+    &__hideMenu {
+        display: none;
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+
+        a {
+            text-decoration: none;
+            color: black;
+            padding: 6px 16px;
+        }
+
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+   
 }

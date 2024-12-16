@@ -7,15 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuAdminComponent implements OnInit {
 
- public open?: boolean;
+ public showMenu?: boolean;
+public showController?: boolean;
 
   ngOnInit(){
 
   }
 
-
-  openMenu(e: any) {
-    return this.open = e.target.checked
+  openSideMenu(e: any) {  
+    setTimeout(() => {
+      this.showController= e.target.checked;
+    }, 300);
+    return this.showMenu = e.target.checked;
   }
 
 }
